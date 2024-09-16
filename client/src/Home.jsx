@@ -14,7 +14,7 @@ function Home() {
           <Sidebar title="fa-brands fa-github" link="https://github.com/Bhupendra-17" />
           <Sidebar imgs="https://www.svgrepo.com/show/330494/geeksforgeeks.svg" link="https://www.geeksforgeeks.org/user/bhupendra_17/" />
           <Sidebar title="fa-brands fa-hackerrank" link="https://www.hackerrank.com/profile/bhupendradewang5" />
-          <Sidebar title="fa-regular fa-file" link="https://drive.google.com/file/d/1ksmjt0xZp2SeD4BwyrQ2S9NL6KlbPSaj/view?usp=drive_link" />
+          <Sidebar title="fa-regular fa-file" link="https://drive.google.com/file/d/1RKzj8nMW46LPlcpu_2KNdqotvZeh2-i9/view?usp=drive_link" />
         </div>
         <div className='flex-grow flex items-center justify-center pt-28'>
           <div className='m-5 border border-gray-700 rounded-xl p-2 shadow-xl shadow-gray-500 bg-gradient-to-r from-sky-900 to-stone-700 transition transform hover:-translate-y-3 cursor-pointer duration-300'>

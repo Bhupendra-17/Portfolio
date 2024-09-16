@@ -23,7 +23,7 @@ function Project() {
                     <Sidebar title="fa-brands fa-github" link="https://github.com/Bhupendra-17" />
                     <Sidebar imgs="https://www.svgrepo.com/show/330494/geeksforgeeks.svg" link="https://www.geeksforgeeks.org/user/bhupendra_17/" />
                     <Sidebar title="fa-brands fa-hackerrank" link="https://www.hackerrank.com/profile/bhupendradewang5" />
-                    <Sidebar title="fa-regular fa-file" link="https://drive.google.com/file/d/1ksmjt0xZp2SeD4BwyrQ2S9NL6KlbPSaj/view?usp=drive_link" />
+                    <Sidebar title="fa-regular fa-file" link="https://drive.google.com/file/d/1RKzj8nMW46LPlcpu_2KNdqotvZeh2-i9/view?usp=drive_link" />
                 </div>
                 <div className='flex-grow flex items-center justify-center pt-28'>
                     <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6'>
