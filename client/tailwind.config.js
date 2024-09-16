@@ -3,7 +3,7 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-    "./tailwind/public/Speed-Sum/*.{html,js}",
+    "./src/*.{js,ts,jsx,tsx}",
   ],
 
   theme: {
