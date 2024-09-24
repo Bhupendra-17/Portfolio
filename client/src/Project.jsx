@@ -26,10 +26,13 @@ function Project() {
                         /></Link>
                         <Link to="/adobe"><Viewproject title="Adobe UI page" desc="Cloned the basic UI of Adobe Landing Page."
                         /></Link>
+                        <Link to="https://printify-web-three.vercel.app/" target="_blank"><Viewproject title="Printify Landing Page" desc="Cloned the UI of printify.com and added some changes."
+                        /></Link>
                         <Link to="/musicplayer"><Viewproject title="Music Player Website" desc="A simple website to play songs."
                         /></Link>
                         <Link to="/digitalclock"><Viewproject title="A Digital Clock" desc="A simple website to display clock."
                         /></Link>
+                        
                     </div>
                 </div>
             </div>
