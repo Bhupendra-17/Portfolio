@@ -8,7 +8,7 @@ function temp(props) {
             {props.title}   
             <i className=" fa-solid fa-arrow-up-right-from-square "></i>  
         </div>
-        <div className='text-sm font-thin text-justify'>
+        <div className='text-sm font-thin text-center'>
             <p>{props.desc}</p>
         </div>   
     </div>

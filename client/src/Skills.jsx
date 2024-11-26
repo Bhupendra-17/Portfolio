@@ -26,14 +26,14 @@ function Project() {
                     <Sidebar title="fa-regular fa-file" link="https://drive.google.com/file/d/1UrUkFBhb8WgXX90bq9iXof8IBcI6uJbZ/view?usp=drive_link" />
                 </div>
                 <div className='flex-grow flex items-center justify-center pt-28'>
-                    <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4'>
+                    <div className='grid grid-cols-1 sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-3 gap-3 lg:gap-4'>
                         <Skillset item={Cpp} title="C++" desc="Intermediate"
                         />
                         <Skillset item={Java} title="Java" desc="Intermediate"
                         />
                         <Skillset item={JavaScript} title="JavaScript" desc="Intermediate"
                         />
-                        <Skillset item={Reactjs} title="React Js" desc="Beginner"
+                        <Skillset item={Reactjs} title="React Js" desc="Intermediate"
                         />
                         <Skillset item={Tailwind} title="Tailwind CSS" desc="Intermediate"
                         />
