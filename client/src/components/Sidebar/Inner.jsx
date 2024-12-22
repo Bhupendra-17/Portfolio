@@ -1,7 +1,7 @@
 import React from 'react';
 import Photo from './geeksforgeeks.svg'
 
-function Temp(props) {
+function Inner(props) {
   return (
     <div className='border border-gray-400 rounded-lg text-2xl self-center hover:shadow-md hover:shadow-sky-600'>
       <a href={props.link} target='_blank' rel='noopener noreferrer' className="p-1">
@@ -14,4 +14,4 @@ function Temp(props) {
   );
 }
 
-export default Temp;
+export default Inner;

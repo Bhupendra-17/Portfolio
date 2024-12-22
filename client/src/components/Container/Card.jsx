@@ -9,7 +9,7 @@ function Temp() {
                 <div className='text-2xl lg:text-3xl font-semibold text-center lg:text-left text-white'>
                     <h2>Hello,</h2>
                     <h2>I'm Bhupendra Dewangan</h2>
-                    <h3 className='text-lg text-stone-300'>Student @ SSIPMT Raipur | Frontend Developer |<br /> Ex-Navodayan</h3>
+                    <h3 className='text-lg text-stone-300'>Student @ SSIPMT Raipur | Web Developer |<br /> Ex-Navodayan</h3>
                 </div>
             </div>
         </div>

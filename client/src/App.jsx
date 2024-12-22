@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Home'
 import Project from './Project';
-import Skills from './Skills';
+import Certification from './Certification';
 import Adobe from './assets/Adobe';
 import MusicPlayer from './assets/MusicPlayer';
 import Zomato from './assets/Zomato';
@@ -17,9 +17,9 @@ function App() {
           <Route path="/adobe" element={<Adobe />} />
           <Route path="/musicplayer" element={<MusicPlayer />} />
           <Route path="/zomato" element={<Zomato />} />
-          <Route path="/skills" element={<Skills />} />
           <Route path="/digitalclock" element={<Digitalclock />} />
           <Route path="/project" element={<Project />} />
+          <Route path="/certifications" element={<Certification />} />
         </Routes>
       </div>
     </Router>

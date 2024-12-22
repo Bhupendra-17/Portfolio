@@ -7,7 +7,7 @@ function temp() {
             <div className='flex justify-end lg:mr-10 '>
                 <Items title="Home" link="/"/>
                 <Items title="Project" link="/project"/>
-                <Items title="Skills" link="/skills"/>
+                <Items title="Certifications" link="/certifications"/>
             </div>
 
         </div>
