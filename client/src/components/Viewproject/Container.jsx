@@ -2,6 +2,9 @@ import React from 'react';
 import Card from './Card';
 import { Link } from 'react-router-dom';
 import Printify from './Printify.png';
+import Zomato from './Zomato.png';
+import Music from './Music.png';
+import ClubVista from './ClubVista.png';
 import GreenBreeze from './GreenBreeze.png';
 
 function Container() {
@@ -28,7 +31,7 @@ function Container() {
                 <Card
                     title="ClubVista"
                     desc="Manages club events efficiently. Creates, schedules, and manages events. Uploads and stores reports for future reference, promoting transparency."
-                    img={GreenBreeze}
+                    img={ClubVista}
                 />
             </Link>
 
@@ -50,7 +53,7 @@ function Container() {
                 <Card
                     title="Zomato UI Page"
                     desc="Replicates the basic UI of Zomato's landing page. Demonstrates the ability to translate visual elements into code, showcasing foundational web skills."
-                    img={GreenBreeze}
+                    img={Zomato}
                 />
             </Link>
 
@@ -59,7 +62,7 @@ function Container() {
                 <Card
                     title="Music Player Website"
                     desc="Builds a simple website for playing songs. Demonstrates the ability to integrate multimedia elements and create interactive web experiences."
-                    img={GreenBreeze}
+                    img={Music}
                 />
             </Link>
         </div>
