@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 function Card(props) {
   return (
@@ -15,6 +14,7 @@ function Card(props) {
             src={props.img}
             alt={props.title}
             className="bg-stone-100 rounded-lg w-full max-w-[500px] sm:max-w-[400px] lg:max-w-none h-auto object-cover"
+            loading='lazy'
           />
         </div>
 
