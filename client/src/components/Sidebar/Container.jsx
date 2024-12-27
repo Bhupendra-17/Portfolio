@@ -3,7 +3,8 @@ import Inner from './Inner'
 
 function Sidebar() {
     return (
-        <div className='fixed top-[55px] left-0 h-fit flex flex-col items-center justify-center bg-white rounded-full gap-4 py-2 sm:py-4 px-2 m-3 shadow-xl
+        <div className='fixed top-[55px] left-0 h-fit flex flex-col items-center justify-center 
+        bg-white rounded-full gap-4 py-2 sm:py-4 px-2 m-3 shadow-xl z-20
         sm:flex-col md:flex-col lg:flex-col sm:top-24'>
             <Inner title="fa-brands fa-linkedin" link="https://www.linkedin.com/in/bhupendra-dewangan-172-rahul" />
             <Inner title="fa-brands fa-github" link="https://github.com/Bhupendra-17" />

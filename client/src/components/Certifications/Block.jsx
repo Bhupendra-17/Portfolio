@@ -1,6 +1,12 @@
-import React from 'react';
+import React, {useState,useEffect} from 'react';
 
 function Card() {
+
+  const [animate,setAnimate] = useState(false);
+  useEffect(()=>{
+    setAnimate(true);
+  },[]);
+
   const data = [
     { id: 1, title: 'Project Development Competition', by: 'AICTE Idea Lab' },
     { id: 2, title: 'Vultr Cloud Innovate Hackathon', by: 'GeeksforGeeks' },
@@ -22,8 +28,9 @@ function Card() {
       <hr className='py-2'/>
       {/* Text Section */}
         <div
-          className="text-sm text-justify lg:text-lg font-normal 
-            text-gray-300 leading-relaxed  flex flex-col gap-6"
+          className={`text-sm text-justify lg:text-lg font-normal 
+            text-gray-300 leading-relaxed  flex flex-col gap-6
+            animate-fade-in `}
         >
           {data.map((item) => (
             <div key={item.id} className="mb-2">
