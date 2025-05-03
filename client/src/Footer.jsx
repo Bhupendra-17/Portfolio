@@ -9,7 +9,7 @@ function Footer() {
           {/* Left Section: Portfolio Name */}
           <div className="text-center md:text-left mb-4 md:mb-0">
             <h1 className="text-xl font-bold text-white">Bhupendra Dewangan</h1>
-            <p className="text-sm text-gray-400">Web Developer | Software Developer | Web Desigining</p>
+            <p className="text-sm text-gray-400">Web Developer | Software Developer</p>
           </div>
 
           {/* Middle Section: Social Links */}

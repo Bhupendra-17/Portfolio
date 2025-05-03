@@ -24,11 +24,22 @@ export default {
           '0%': { opacity: 0 },
           '100%': { opacity: 1 },
         },
+        marquee: {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+        bounce: { // Added bounce animation keyframes
+          '0%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+          '100%': { transform: 'translateY(0)' },
+        },
       },
       animation: {
         'move-r-l': 'move-r-l 11s ease-out infinite',
         'slide-in': 'slideIn 1s ease-out',
-        'fade-in': 'fadeIn 1s ease-in', // Fade-in animation with 2 seconds duration
+        'fade-in': 'fadeIn 1s ease-in',
+        'animate-marquee': 'marquee 25s linear infinite',
+        'animate-bounce': 'bounce 1s infinite', // Added bounce animation to the list
       },
     },
   },
