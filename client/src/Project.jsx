@@ -3,7 +3,7 @@ import Navbar from './components/Navbar/Navbar';
 import Footer from './Footer';
 import Sidebar from './components/Sidebar/Container';
 // import Container from './components/Viewproject/Container';
-
+import TaskManager from '/task.png';
 import Printify from '/Printify.png';
 import Zomato from '/Zomato.png';
 import ClubVista from '/ClubVista.png';
@@ -22,29 +22,10 @@ function Project() {
     const projects = [
         {
             id: 1,
-            title: "GreenBreeze",
-            description: "An innovative solution for urban air quality management through strategic plantation planning.",
-            image: GreenBreeze,
-            category: "fullstack",
-            githubLink: "https://github.com/Bhupendra-17/GreenBreeze",
-            liveLink: "https://greenbreeze.vercel.app",
-            techStack: [
-                { name: "React.js"},
-                { name: "Node.js" },
-                { name: "Tailwind CSS" }
-            ],
-            features: [
-                "Real-time air quality monitoring",
-                "Calculates required area for plantation in the city",
-                "Analysing the population and area of city"
-            ]
-        },
-        {
-            id: 2,
             title: "ClubVista",
             description: "Manages club events efficiently. Creates, schedules, and manages events. Uploads and stores reports for future reference.",
             image: ClubVista,
-            category: "fullstack",
+            category: "full-Stack",
             githubLink: "https://github.com/Bhupendra-17/Clubvista",
             liveLink: "https://schedule-3fe75.web.app/",
             techStack: [
@@ -61,12 +42,50 @@ function Project() {
             ]
         },
         {
+            id: 2,
+            title: "Task Manager",
+            description: "A simple and efficient todo list app to manage daily tasks, with user friendly layout and design.",
+            image: TaskManager,
+            category: "full-Stack",
+            githubLink: "https://github.com/Bhupendra-17/TaskManager",
+            liveLink: "https://taskmanager.vercel.app",
+            techStack: [
+                { name: "React.js" },
+                { name: "Tailwind CSS" },
+                { name: "FastAPI" },
+                { name: "SQLite" }
+            ],
+            features: [
+                "Task creation, editing, and deletion",
+                "Track your tasks"
+            ]
+        },
+        {
             id: 3,
+            title: "GreenBreeze",
+            description: "An innovative solution for urban air quality management through strategic plantation planning.",
+            image: GreenBreeze,
+            category: "full-Stack",
+            githubLink: "https://github.com/Bhupendra-17/GreenBreeze",
+            liveLink: "https://greenbreeze.vercel.app",
+            techStack: [
+                { name: "React.js"},
+                { name: "Node.js" },
+                { name: "Tailwind CSS" }
+            ],
+            features: [
+                "Real-time air quality monitoring",
+                "Calculates required area for plantation in the city",
+                "Analysing the population and area of city"
+            ]
+        },
+        {
+            id: 4,
             title: "Printify Landing Page",
             description: "Recreates the UI of Printify.com, showcasing design and front-end development skills.",
             image: Printify,
             category: "frontend",
-            githubLink: "https://github.com/Bhupendra-17/Printify",
+            githubLink: "https://github.com/Bhupendra-17/PrintifyWeb",
             liveLink: "https://printify-web-three.vercel.app/",
             techStack: [
                 { name: "React.js" },
@@ -79,7 +98,7 @@ function Project() {
             ]
         },
         {
-            id: 4,
+            id: 5,
             title: "Zomato UI Page",
             description: "Replicates the basic UI of Zomato's landing page, demonstrating the ability to translate visual design into code.",
             image: Zomato,
@@ -118,7 +137,7 @@ function Project() {
                             </h1>
                             
                             <div className='mt-2 flex flex-wrap gap-4'>
-                                {['all', 'frontend', 'fullstack'].map((filter) => (
+                                {['all', 'full-Stack', 'frontend'].map((filter) => (
                                     <button
                                         key={filter}
                                         onClick={() => setActiveFilter(filter)}
