@@ -16,15 +16,18 @@ function Home() {
     { name: "MySQL", level: 70 },
     { name: "Node.js", level: 50 },
     { name: "Express.js", level: 45 },
-    { name: "Python", level: 60 },
     { name: "Git", level: 60 },
-    { name: "GitHub", level: 65 },
-    { name: "C++", level: 85 },
+    { name: "GitHub", level: 65 },    
     { name: "Firebase", level: 50 }
   ];
+  const languages = [
+    { name: "C++", level: 85 },
+    { name: "Java", level: 50 },
+    { name: "Python", level: 30 }
+  ];
   const otherskills = [
-    { name: "Debugging" },
     { name: "Problem Solving" },
+    { name: "Debugging" },
     { name: "Team Working" },
     { name: "Content Writing" }
   ];
@@ -56,32 +59,7 @@ function Home() {
   return (
     <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-sky-900 min-h-screen overflow-x-hidden">
       <Navbar />
-
-      {/* Hero Section */}
-      <div className="relative w-full h-[90vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900 z-10"></div>
-          <div className="absolute inset-0 bg-[url('/path-to-your-pattern.svg')] opacity-10 animate-pulse"></div>
-        </div>
-
-        <div className="relative z-20 text-center p-5 max-w-4xl mx-auto">
-          <h1 className="text-6xl md:text-7xl font-black text-white mb-6 animate-fade-in-up">
-            <span className="bg-gradient-to-r from-sky-400 to-cyan-300 text-transparent bg-clip-text">
-              Welcome to my Portfolio
-            </span>
-          </h1>
-          <p className="text-2xl md:text-3xl text-gray-300 animate-fade-in-up delay-200">
-            Discover my world of design and development
-            <span className="inline-block animate-pulse ml-2">💻</span>
-          </p>
-        </div>
-
-        {/* Animated background particles */}
-        <div className="absolute inset-0 z-0">
-          <div className="particles-container"></div>
-        </div>
-      </div>
-
+ 
       {/* Main Content */}
       <div className="container mx-auto px-4 py-16">
         <div className="flex flex-col md:flex-row gap-8">
@@ -95,7 +73,7 @@ function Home() {
               <div
                 id="card1"
                 data-animate
-                className={`transform transition-all duration-900 ${isVisible.card1 ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
+                className={`transform transition-all duration-[1500ms] ${isVisible.card1 ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
                   }`}
               >
                 <Container />
@@ -171,6 +149,32 @@ function Home() {
           </div>
 
           {/* Skills Grid with Animated Cards */}
+          <h2 className="text-xl font-black m-5 bg-gradient-to-r from-sky-400 to-cyan-300 text-transparent bg-clip-text">
+            Programming Languages
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {languages.map((skill, index) => (
+              <div
+                key={index}
+                className="group relative overflow-hidden rounded-xl bg-gray-800/50 backdrop-blur-sm p-6 hover:bg-gray-800/70 transition-all duration-300"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-sky-500/20 to-cyan-500/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                <div className="relative z-10">
+                  <h3 className="text-xl font-bold text-white mb-2">{skill.name}</h3>
+                  <div className="w-full bg-gray-700 rounded-full h-2">
+                    <div
+                      className="bg-gradient-to-r from-sky-400 to-cyan-300 h-2 rounded-full transition-all duration-700"
+                      style={{ width: `${skill.level}%` }}
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          {/* Development skills */}
+          <h2 className="text-xl font-black m-5 bg-gradient-to-r from-sky-400 to-cyan-300 text-transparent bg-clip-text">
+            Development Skills
+          </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {skills.map((skill, index) => (
               <div

@@ -10,10 +10,13 @@ function Card() {
           className="bg-stone-200 p-2 w-40 lg:w-52 self-center rounded-full"
           alt="Profile Photo"
         />
-        <div className="text-2xl lg:text-3xl font-semibold text-center text-white">
-          <h3 className='text-2xl'>Hi! 👋</h3><h2> I'm Bhupendra Dewangan</h2>
-          <h3 className="text-lg text-stone-300">
-            Aspiring Software Developer | <br />Student @ SSIPMT Raipur | Web Developer | <br />Ex-Navodayan
+        <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-center text-white">
+          <h3 className="text-lg sm:text-xl">Hi! 👋</h3>
+          <h2 className="text-xl sm:text-2xl">I'm Bhupendra Dewangan</h2>
+          <h3 className="text-base sm:text-lg md:text-xl text-stone-300">
+            Aspiring Software Developer | <br className="hidden sm:block" />
+            Student @ SSIPMT Raipur | Web Developer | <br className="hidden sm:block" />
+            Ex-Navodayan
           </h3>
         </div>
       </div>
