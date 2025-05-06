@@ -1,5 +1,5 @@
 import React from 'react';
-import photo from './photo.png'; // Adjust the path relative to the current file
+import photo from '/photo.png'; // Adjust the path relative to the current file
 
 function Card() {
   return (
@@ -7,7 +7,7 @@ function Card() {
       <div className="w-full max-w-4xl flex flex-col gap-4 items-center">
         <img
           src={photo}
-          className="bg-stone-200 p-2 w-40 lg:w-52 self-center rounded-full"
+          className="bg-stone-200 p-1 h-40 lg:h-52 self-center rounded-full"
           alt="Profile Photo"
         />
         <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-center text-white">

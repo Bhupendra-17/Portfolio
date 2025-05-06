@@ -14,7 +14,7 @@ const skillBars = (skills) =>
     >
       <div className="absolute inset-0 bg-gradient-to-r from-sky-500/20 to-cyan-500/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
       <div className="relative z-10">
-        <h3 className="text-xl sm:text-lg md:text-lg font-bold text-white mb-2">{skill.name}</h3>
+        <h3 className="text-lg sm:text-md md:text-md font-bold text-white mb-2">{skill.name}</h3>
         {skill.level && (
           <div className="w-full bg-gray-700 rounded-full h-2">
             <div
@@ -144,7 +144,7 @@ function Home() {
               className="group relative overflow-hidden rounded-xl bg-gray-800/50 backdrop-blur-sm p-5 hover:bg-gray-800/70 transition-all duration-300"
             >
               <div className="relative z-10">
-                <h3 className="text-xl sm:text-lg md:text-lg font-bold text-white mb-2">{skill.name}</h3>
+                <h3 className="text-lg sm:text-md md:text-md font-bold text-white mb-2">{skill.name}</h3>
               </div>
             </div>
           ))}
