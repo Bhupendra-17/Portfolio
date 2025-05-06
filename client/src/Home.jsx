@@ -5,6 +5,7 @@ import Sidebar from './components/Sidebar/Container';
 // import Skills from './Skills';
 import Footer from './Footer';
 import Giphy from '/giphy.webp';
+import Awards from '/awards.png'
 
 function Home() {
   const [animate, setAnimate] = useState(false);
@@ -17,7 +18,7 @@ function Home() {
     { name: "Node.js", level: 50 },
     { name: "Express.js", level: 45 },
     { name: "Git", level: 60 },
-    { name: "GitHub", level: 65 },    
+    { name: "GitHub", level: 65 },
     { name: "Firebase", level: 50 }
   ];
   const languages = [
@@ -29,7 +30,7 @@ function Home() {
     { name: "Problem Solving" },
     { name: "Debugging" },
     { name: "Team Working" },
-    { name: "Content Writing" }
+    { name: "Content Writing" },
   ];
 
   // Intersection Observer for scroll animations
@@ -59,7 +60,7 @@ function Home() {
   return (
     <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-sky-900 min-h-screen overflow-x-hidden">
       <Navbar />
- 
+
       {/* Main Content */}
       <div className="container mx-auto px-4 py-16">
         <div className="flex flex-col md:flex-row gap-8">
@@ -73,7 +74,7 @@ function Home() {
               <div
                 id="card1"
                 data-animate
-                className={`transform transition-all duration-[1500ms] ${isVisible.card1 ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
+                className={`transform transition-all duration-[2000ms] ${isVisible.card1 ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
                   }`}
               >
                 <Container />
@@ -107,26 +108,26 @@ function Home() {
           <h2 className="text-4xl font-black text-center mb-12 bg-gradient-to-r from-sky-400 to-cyan-300 text-transparent bg-clip-text">
             Experience
           </h2>
-      
+
           <div className="flex flex-col gap-4">
-              <div
-                className="group relative overflow-hidden rounded-xl bg-gray-800/50 backdrop-blur-sm p-5 hover:bg-gray-800/70 transition-all duration-300"
-              >
-                <div className="relative z-10 text-white">
-                  <h3 className="text-xl font-bold  mb-2">Thought Applied Creations</h3>
-                  <p> Web Developer Trainee</p>
-                  <p>July-2024  to  August-2024</p>
-                </div>
+            <div
+              className="group relative overflow-hidden rounded-xl bg-gray-800/50 backdrop-blur-sm p-5 hover:bg-gray-800/70 transition-all duration-300"
+            >
+              <div className="relative z-10 text-white">
+                <h3 className="text-xl font-bold  mb-2">Thought Applied Creations</h3>
+                <p> Web Developer Trainee</p>
+                <p>July-2024  to  August-2024</p>
               </div>
-              <div
-                className="group relative overflow-hidden rounded-xl bg-gray-800/50 backdrop-blur-sm p-5 hover:bg-gray-800/70 transition-all duration-300"
-              >
-                <div className="relative z-10 text-white">
-                  <h3 className="text-xl font-bold  mb-2">Newsletter Team, SSIPMT Raipur</h3>
-                  <p> Content Writer</p>
-                  <p>Sept-2023  to  August-2024</p>
-                </div>
+            </div>
+            <div
+              className="group relative overflow-hidden rounded-xl bg-gray-800/50 backdrop-blur-sm p-5 hover:bg-gray-800/70 transition-all duration-300"
+            >
+              <div className="relative z-10 text-white">
+                <h3 className="text-xl font-bold  mb-2">Newsletter Team, SSIPMT Raipur</h3>
+                <p> Content Writer</p>
+                <p>October-2023  to  July-2024</p>
               </div>
+            </div>
           </div>
         </div>
       </section>
@@ -212,7 +213,29 @@ function Home() {
           </div>
         </div>
       </section>
-      
+
+      {/* Brownie Points Section */}
+      <section className="py-16 bg-gradient-to-b from-gray-900 to-sky-900">
+        <div className="container mx-auto px-10">
+          <h2 className="text-4xl font-black text-center mb-10 bg-gradient-to-r from-sky-400 to-cyan-300 text-transparent bg-clip-text">
+            Awards
+          </h2>
+          <div
+            id="card1"
+            data-animate
+            className={`transform transition-all duration-[5000ms] ${isVisible.card1 ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
+              }`}
+          >
+            <img
+              src={Awards}
+              alt='award'
+              className="md:h-40 lg:h-40 shadow-lg mx-auto rounded-md"
+            />
+          </div>
+
+        </div>
+      </section>
+
       <Footer />
 
       {/* Custom CSS */}
