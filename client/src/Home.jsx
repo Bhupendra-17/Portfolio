@@ -48,6 +48,29 @@ function Home() {
     { name: "HTML", level: 85 },
     { name: "CSS", level: 70 },
   ];
+  const educationData = [
+    {
+      degree: "B.Tech (Computer Science & Engineering)",
+      institution: "Shri Shankaracharya Institute of Professional Management & Technology, Raipur",
+      duration: "2022 - 2026",
+      description: [
+        "CGPA: 8.4 (till 5th semester)",
+        "Key Learnings: Data Structures & Algorithms, Project Development, Team working",
+      ],
+    },
+    {
+      degree: "Higher Secondary (CBSE)",
+      institution: "Jawahar Navodaya Vidyalaya, Raipur",
+      duration: "2021 - 2022",
+      description: ["Percentage: 85.6 %", "Stream: PCM + CS"],
+    },
+    {
+      degree: "Senior Secondary (CBSE)",
+      institution: "Jawahar Navodaya Vidyalaya, Raipur",
+      duration: "2019 - 2020",
+      description: ["Percentage: 87.4 %"],
+    },
+  ];
 
   const languages = [
     { name: "C++", level: 80 },
@@ -130,6 +153,33 @@ function Home() {
 
       {/* Experience Section */}
       <Experience />
+      <Section title="Education">
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+          className="space-y-6 px-8"
+        >
+          {educationData.map((edu, idx) => (
+            <div
+              key={idx}
+              className="group relative overflow-hidden rounded-xl bg-gray-800/50 backdrop-blur-sm p-6 hover:bg-gray-800/70 transition-all duration-300"
+            >
+              <div className="relative z-10 text-white">
+                <h3 className="text-xl font-bold text-cyan-300">{edu.degree}</h3>
+                <p className="text-lg text-gray-300">{edu.institution}</p>
+                <p className="text-sm text-gray-400 mb-3">{edu.duration}</p>
+                <ul className="list-disc list-inside text-gray-300 text-sm space-y-1">
+                  {edu.description.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </motion.div>
+      </Section>
 
       {/* Skills Section */}
       <Section title="Technical Expertise">

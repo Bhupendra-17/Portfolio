@@ -44,7 +44,7 @@ const variants = {
     opacity: 1,
     scale: 1,
     transition: {
-      duration: 1,
+      duration: 0.3,
       ease: [0.25, 0.8, 0.25, 1],
     },
   },
@@ -53,7 +53,7 @@ const variants = {
     opacity: 0,
     scale: 0.9,
     transition: {
-      duration: 0.8,
+      duration: 1.6,
       ease: [0.42, 0, 0.58, 1],
     },
   }),

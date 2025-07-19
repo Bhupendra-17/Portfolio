@@ -187,7 +187,7 @@ function Project() {
                                         initial={{ opacity: 0, y: 40 }}
                                         whileInView={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 0.6, delay: index * 0.15 }}
-                                        viewport={{ once: false, amount: 0.2 }}
+                                        viewport={{ once: true }}
                                     >
                                         {/* Project Image */}
                                         <div className="relative h-48 overflow-hidden rounded-lg">

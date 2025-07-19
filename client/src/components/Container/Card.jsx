@@ -24,7 +24,7 @@ function Card() {
           <h2 className="text-xl sm:text-2xl">I'm Bhupendra Dewangan</h2>
           <h3 className="text-base sm:text-lg md:text-xl text-stone-300">
             Aspiring Software Developer | <br className="hidden sm:block" />
-            B. Tech @ SSIPMT Raipur | Web Developer | <br className="hidden sm:block" />
+            B. Tech @ SSIPMT Raipur | Web Developer | 
             Navodayan 
           </h3>
         </motion.div>
