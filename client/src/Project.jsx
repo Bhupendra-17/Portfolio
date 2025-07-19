@@ -8,7 +8,7 @@ import Printify from '/Printify.png';
 import Zomato from '/Zomato.png';
 import ClubVista from '/ClubVista.png';
 import GreenBreeze from '/GreenBreeze.png';
-
+import { motion } from "framer-motion";
 
 function Project() {
     const [activeFilter, setActiveFilter] = useState('all');
@@ -20,6 +20,28 @@ function Project() {
 
     // Define projects data in a dynamic format
     const projects = [
+        {
+            id: 0,
+            title: "Speeliable",
+            description: "A workforce delivery management solution to track, assign, and optimize delivery operations.",
+            image: "/Speeliable.png", // Ensure the image is in your public or assets folder
+            category: "full-Stack",
+            githubLink: "https://github.com/JAIKUMAR07/Speeliable", // replace with actual link if needed
+            liveLink: "https://speeliable.vercel.app/", // replace with your deployment link
+            techStack: [
+                { name: "React.js" },
+                { name: "Tailwind CSS" },
+                { name: "FastAPI" },
+                { name: "MongoDB" },
+                { name: "Leaflet.js" }
+            ],
+            features: [
+                "Automate the location searching and routing",
+                "Live location tracking of recipients",
+                "Notification for confirmation of delivery"
+            ]
+        }
+        ,
         {
             id: 1,
             title: "ClubVista",
@@ -69,7 +91,7 @@ function Project() {
             githubLink: "https://github.com/Bhupendra-17/GreenBreeze",
             liveLink: "https://greenbreeze.vercel.app",
             techStack: [
-                { name: "React.js"},
+                { name: "React.js" },
                 { name: "Node.js" },
                 { name: "Tailwind CSS" }
             ],
@@ -89,7 +111,7 @@ function Project() {
             liveLink: "https://printify-web-three.vercel.app/",
             techStack: [
                 { name: "React.js" },
-                { name: "Tailwind CSS"}
+                { name: "Tailwind CSS" }
             ],
             features: [
                 "Responsive landing page design",
@@ -105,7 +127,7 @@ function Project() {
             category: "frontend",
             liveLink: "/zomato",
             techStack: [
-                { name: "React.js",  },
+                { name: "React.js", },
                 { name: "Tailwind CSS", }
             ],
             features: [
@@ -135,17 +157,15 @@ function Project() {
                             <h1 className='text-4xl font-black mb-8 text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-sky-400'>
                                 My Projects
                             </h1>
-                            
                             <div className='mt-2 flex flex-wrap gap-4'>
                                 {['all', 'full-Stack', 'frontend'].map((filter) => (
                                     <button
                                         key={filter}
                                         onClick={() => setActiveFilter(filter)}
-                                        className={`px-6 py-2 rounded-full transition-all duration-300 ${
-                                            activeFilter === filter
-                                                ? 'bg-cyan-500 text-white shadow-lg shadow-cyan-500/50'
-                                                : 'bg-gray-800/50 text-gray-300 hover:bg-gray-800'
-                                        }`}
+                                        className={`px-6 py-2 rounded-full transition-all duration-300 ${activeFilter === filter
+                                            ? 'bg-cyan-500 text-white shadow-lg shadow-cyan-500/50'
+                                            : 'bg-gray-800/50 text-gray-300 hover:bg-gray-800'
+                                            }`}
                                     >
                                         {filter.charAt(0).toUpperCase() + filter.slice(1)}
                                     </button>
@@ -154,79 +174,83 @@ function Project() {
                         </div>
 
                         {/* Projects Grid */}
-                        <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
-                            {projects.filter(project => activeFilter === 'all' || project.category === activeFilter).map((project) => (
-                                <div
-                                    key={project.id}
-                                    className={`group relative overflow-hidden rounded-xl bg-gray-800/50 backdrop-blur-sm transition-all duration-500 hover:transform hover:scale-[1.02] ${
-                                        animate ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
-                                    }`}
-                                >
-                                    {/* Project Image */}
-                                    <div className='relative h-48 overflow-hidden'>
-                                        <img
-                                            src={project.image}
-                                            alt={project.title}
-                                            className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-110'
-                                        />
-                                        <div className='absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent'></div>
-                                    </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            {projects
+                                .filter(project => activeFilter === 'all' || project.category === activeFilter)
+                                .map((project, index) => (
+                                    <motion.div
+                                        key={project.id}
+                                        className="group p-6 rounded-2xl bg-gradient-to-br from-slate-800/70 to-slate-900/60 backdrop-blur-md 
+             border border-slate-700 hover:border-cyan-400 transition-all duration-500 
+             shadow-md hover:shadow-cyan-600/50 hover:-translate-y-1 hover:scale-[1.03] 
+             text-white overflow-hidden"
+                                        initial={{ opacity: 0, y: 40 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.6, delay: index * 0.15 }}
+                                        viewport={{ once: false, amount: 0.2 }}
+                                    >
+                                        {/* Project Image */}
+                                        <div className="relative h-48 overflow-hidden rounded-lg">
+                                            <img
+                                                src={project.image}
+                                                alt={project.title}
+                                                className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
+                                            />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
+                                        </div>
 
-                                    {/* Project Content */}
-                                    <div className='p-6'>
-                                        <h3 className='text-2xl font-bold text-white mb-3'>{project.title}</h3>
-                                        <p className='text-gray-300 mb-4'>{project.description}</p>
+                                        {/* Project Content */}
+                                        <div className="p-4">
+                                            <h3 className="text-2xl font-semibold text-white mb-2">{project.title}</h3>
+                                            <p className="text-gray-300 mb-4">{project.description}</p>
 
-                                        {/* Tech Stack */}
-                                        <div className='mb-6'>
-                                            <h4 className='text-sm font-semibold text-cyan-400 mb-2'>Technologies Used</h4>
-                                            <div className='flex flex-wrap gap-2'>
-                                                {project.techStack.map((tech, index) => (
-                                                    <div
-                                                        key={index}
-                                                        className='flex items-center gap-1 px-3 py-1 rounded-full bg-gray-700/50 text-sm text-gray-300'
-                                                    >
-                                                        <span>{tech.name}</span>
-                                                    </div>
-                                                ))}
+                                            {/* Tech Stack */}
+                                            <div className="mb-5">
+                                                <h4 className="text-sm font-medium text-cyan-400 mb-1">Technologies Used</h4>
+                                                <div className="flex flex-wrap gap-2">
+                                                    {project.techStack.map((tech, i) => (
+                                                        <span
+                                                            key={i}
+                                                            className="px-3 py-1 text-sm bg-gray-700/50 text-gray-200 rounded-full"
+                                                        >
+                                                            {tech.name}
+                                                        </span>
+                                                    ))}
+                                                </div>
+                                            </div>
+
+                                            {/* Key Features */}
+                                            <div className="mb-6">
+                                                <h4 className="text-sm font-medium text-cyan-400 mb-1">Key Features</h4>
+                                                <ul className="list-disc list-inside text-gray-300 space-y-1 pl-2">
+                                                    {project.features.map((feature, i) => (
+                                                        <li key={i}>{feature}</li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+
+                                            {/* Links */}
+                                            <div className="flex flex-wrap gap-4">
+                                                <a
+                                                    href={project.githubLink}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="px-4 py-2 rounded-md bg-gray-700 text-white hover:bg-gray-600 transition-colors"
+                                                >
+                                                    GitHub
+                                                </a>
+                                                <a
+                                                    href={project.liveLink}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="px-4 py-2 rounded-md bg-cyan-600 text-white hover:bg-cyan-700 transition-colors"
+                                                >
+                                                    Live Demo
+                                                </a>
                                             </div>
                                         </div>
-
-                                        {/* Key Features */}
-                                        <div className='mb-6'>
-                                            <h4 className='text-sm font-semibold text-cyan-400 mb-2'>Key Features</h4>
-                                            <ul className='space-y-2'>
-                                                {project.features.map((feature, index) => (
-                                                    <li key={index} className='flex items-center text-gray-300'>
-                                                        <span className='mr-2'>•</span>
-                                                        {feature}
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
-
-                                        {/* Project Links */}
-                                        <div className='flex gap-4'>
-                                            <a
-                                                href={project.githubLink}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className='flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-700 text-white hover:bg-gray-600 transition-colors'
-                                            >
-                                                Github
-                                            </a>
-                                            <a
-                                                href={project.liveLink}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className='flex items-center gap-2 px-4 py-2 rounded-lg bg-cyan-600 text-white hover:bg-cyan-700 transition-colors'
-                                            >
-                                                Live Demo
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
+                                    </motion.div>
+                                ))}
                         </div>
                     </div>
                 </div>

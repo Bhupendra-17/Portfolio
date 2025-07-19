@@ -1,12 +1,7 @@
-import React, {useState,useEffect} from 'react';
+import React from 'react';
+import { motion } from 'framer-motion';
 
 function Card() {
-
-  const [animate,setAnimate] = useState(false);
-  useEffect(()=>{
-    setAnimate(true);
-  },[]);
-
   const data = [
     { id: 1, title: 'Project Development Competition', by: 'AICTE Idea Lab' },
     { id: 2, title: 'Vultr Cloud Innovate Hackathon', by: 'GeeksforGeeks' },
@@ -19,28 +14,36 @@ function Card() {
   ];
 
   return (
-    <div
-      className="bg-gradient-to-t from-gray-900 to-stone-700 m-4 
-        border border-gray-700 rounded-xl p-5 shadow-2xl shadow-gray-600  
-        text-white font-semibold max-w-4xl mx-auto"
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false, amount: 0.2 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+      className="bg-gradient-to-br from-gray-900 to-stone-700 bg-opacity-60 backdrop-blur-lg
+        m-4 border border-gray-700 rounded-3xl p-8 shadow-[0_4px_30px_rgba(0,0,0,0.4)]
+        text-white font-sans max-w-5xl mx-auto"
     >
-      <p className='text-2xl font-bold py-3'>My Certifications </p>
-      <hr className='py-2'/>
-      {/* Text Section */}
-        <div
-          className={`text-sm text-justify lg:text-lg font-normal 
-            text-gray-300 leading-relaxed  flex flex-col gap-6
-            animate-fade-in `}
-        >
-          {data.map((item) => (
-            <div key={item.id} className="mb-2">
-              
-              <p className="font-bold">{item.title}</p>
-              <p>Issued by: {item.by}</p>
-            </div>
-          ))}
+      <h2 className="text-3xl font-bold pb-4 border-b border-gray-600 mb-6 text-center">
+        My Certifications
+      </h2>
+
+      <div className="flex flex-col gap-5">
+        {data.map((item, index) => (
+          <motion.div
+            key={item.id}
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ delay: index * 0.1, duration: 0.6, ease: 'easeOut' }}
+            className="p-4 rounded-xl bg-slate-800/40 hover:bg-slate-800/70 transition-all duration-300
+              border border-gray-600 hover:shadow-md hover:shadow-cyan-500/20"
+          >
+            <p className="text-lg font-semibold">{item.title}</p>
+            <p className="text-sm text-gray-300">Issued by: {item.by}</p>
+          </motion.div>
+        ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
 
