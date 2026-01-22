@@ -4,13 +4,24 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const experiences = [
   {
-    company: "VidyutSense AI",
-    role: "Full Stack Developer",
-    duration: "Oct 2023 – July 2024",
+    company: "Botivate Services LLP",
+    role: "Full Stack Developer Intern",
+    duration: "Jan 2026 – Present",
     description: [
-      "Developed full-stack features using React, FastAPI, MongoDB.",
-      "Integrated AI models for electrical asset monitoring.",
-      "Built secure JWT authentication flows.",
+      "Optimized databases and implement indexing and joining for scalability.",
+      "Added new features and enhanced the UI/UX.",
+      "Worked majorly in React.js, Supabase, Tailwind CSS and Node.js.",
+      "Working majorly with existing projects to meet clients requirements.",
+    ],
+  },
+  {
+    company: "VidyutSense AI",
+    role: "Full Stack Developer Intern",
+    duration: "Jun 2025 – Aug 2025",
+    description: [
+      "Worked in AWS Lambda and AppSync for serverless architecture.",
+      "Integrated Firebase authentication and token validation.",
+      "Developed responsive UI components with Next.js and Tailwind CSS.",
     ],
   },
   {
@@ -72,7 +83,7 @@ const ExperienceSlider = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       paginate(1);
-    }, 4000);
+    }, 5000);
     return () => clearInterval(timer);
   }, []);
 
@@ -91,7 +102,7 @@ const ExperienceSlider = () => {
             onClick={() => paginate(-1)}
             className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition hidden md:block"
           >
-            <ChevronLeft size={28} />
+            <ChevronLeft size={20} />
           </button>
 
           <div className="relative w-full max-w-xl h-full min-h-[250px]">
@@ -122,7 +133,7 @@ const ExperienceSlider = () => {
             onClick={() => paginate(1)}
             className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition hidden md:block"
           >
-            <ChevronRight size={28} />
+            <ChevronRight size={20} />
           </button>
         </div>
       </div>

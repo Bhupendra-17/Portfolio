@@ -77,6 +77,12 @@ function Home() {
     { name: "Java", level: 40 },
     { name: "Python", level: 30 }
   ];
+  const cs = [
+    { name: "Object Oriented Programming" },
+    { name: "Data Structures & Algorithms" },
+    { name: "Database Management Systems" },
+    { name: "SDLC & Agile Methodologies" }
+  ]
 
   const otherskills = [
     { name: "Problem Solving" },
@@ -192,6 +198,18 @@ function Home() {
           <FloatingImage src={Giphy} />
           <SkillGroup title="Programming Languages">{skillBars(languages)}</SkillGroup>
           <SkillGroup title="Development Skills">{skillBars(skills)}</SkillGroup>
+          <SkillGroup title="CS Fundamentals">
+            {cs.map((skill, idx) => (
+              <div
+                key={idx}
+                className="group relative overflow-hidden rounded-xl bg-gray-800/50 backdrop-blur-sm p-5 hover:bg-gray-800/70 transition-all duration-300"
+              >
+                <div className="relative z-10">
+                  <h3 className="text-lg sm:text-md md:text-md font-bold text-white mb-2">{skill.name}</h3>
+                </div>
+              </div>
+            ))}
+          </SkillGroup>
           <SkillGroup title="Other Skills">
             {otherskills.map((skill, idx) => (
               <div
