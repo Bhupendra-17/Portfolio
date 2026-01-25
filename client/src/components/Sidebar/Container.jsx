@@ -32,7 +32,8 @@ function Sidebar() {
                 <Inner imgs={Codolio} link="https://codolio.com/profile/Bhupendra_17" />
                 <Inner imgs={Gfg} link="https://www.geeksforgeeks.org/user/bhupendra_17/" />
                 <Inner title="fa-brands fa-hackerrank" link="https://www.hackerrank.com/profile/bhupendradewang5" />
-                <Inner title="fa-regular fa-file" link="https://drive.google.com/file/d/1w02-m8KJRd-Y4g5fyYdog0u_2fdqD37t/view?usp=sharing" />
+                <Inner title="fa-regular fa-file" link="https://drive.google.com/file/d/1ro_ckWcbjgFtqmPOeu1OswoDpjbUy7Eg/view?usp=sharing" />
+                <Inner title="fa-brands fa-x-twitter" link="https://x.com/Bhupendra17_" />
             </div>
         </div>
     );

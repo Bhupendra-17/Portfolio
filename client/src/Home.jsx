@@ -54,7 +54,7 @@ function Home() {
       institution: "Shri Shankaracharya Institute of Professional Management & Technology, Raipur",
       duration: "2022 - 2026",
       description: [
-        "CGPA: 8.4 (till 5th semester)",
+        "CGPA: 8.7",
         "Key Learnings: Data Structures & Algorithms, Project Development, Team working",
       ],
     },
