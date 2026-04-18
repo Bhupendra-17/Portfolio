@@ -4,6 +4,7 @@ import { easeIn, motion } from 'framer-motion';
 function Card() {
   const data = [
     { id: 1, title: 'Project Development Competition', by: 'AICTE Idea Lab' },
+    { id: 2, title: 'Xcelerate Hackathon ', by: 'IIIT, Naya Raipur' },
     { id: 2, title: 'Vultr Cloud Innovate Hackathon', by: 'GeeksforGeeks' },
     { id: 3, title: 'NITS 7.0 Hackathon', by: 'NIT Silchar' },
     { id: 4, title: 'Programming Contest', by: 'SSIPMT Raipur' },
@@ -17,8 +18,8 @@ function Card() {
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true}}
-      transition={{ duration: 0.6,ease: easeIn }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, ease: easeIn }}
       className="bg-gradient-to-br from-gray-900 to-stone-700 bg-opacity-60 backdrop-blur-lg
         m-4 border border-gray-700 rounded-3xl p-8 sm:ml-4 md:ml-16 shadow-[0_4px_30px_rgba(0,0,0,0.4)]
         text-white font-sans max-w-5xl mx-auto"
