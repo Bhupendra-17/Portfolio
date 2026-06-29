@@ -1,316 +1,65 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { motion } from "framer-motion";
 import Navbar from './components/Navbar/Navbar';
-import Container from './components/Container/Card';
 import Sidebar from './components/Sidebar/Container';
-import Experience from './components/Experience';
 import Footer from './Footer';
-import Giphy from '/giphy.webp';
-import Awards from '/awards.png';
 
-const skillBars = (skills) =>
-  skills.map((skill, index) => (
-    <div
-      key={index}
-      className="group relative overflow-hidden rounded-xl bg-gray-800/50 backdrop-blur-sm p-6 hover:bg-gray-800/70 transition-all duration-300"
-    >
-      <div className="absolute inset-0 bg-gradient-to-r from-sky-500/20 to-cyan-500/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
-      <div className="relative z-10">
-        <h3 className="text-lg sm:text-md md:text-md font-bold text-white mb-2">{skill.name}</h3>
-        {skill.level && (
-          <div className="w-full bg-gray-700 rounded-full h-2">
-            <motion.div
-              initial={{ width: 0 }}
-              whileInView={{ width: `${skill.level}%` }}
-              transition={{ duration: 1.2 }}
-              className="bg-gradient-to-r from-sky-400 to-cyan-300 h-2 rounded-full"
-            />
-          </div>
-        )}
-      </div>
-    </div>
-  ));
-
+// Sections
+import Hero from './components/HomeSections/Hero';
+import About from './components/HomeSections/About';
+import Experience from './components/HomeSections/Experience';
+import Services from './components/HomeSections/Services';
+import Skills from './components/HomeSections/Skills';
+import ProjectsHighlight from './components/HomeSections/ProjectsHighlight';
+import Achievements from './components/HomeSections/Achievements';
+import Education from './components/HomeSections/Education';
+import Contact from './components/HomeSections/Contact';
 
 function Home() {
-  const [isVisible, setIsVisible] = useState({});
-
-  const skills = [
-    { name: "React.js", level: 65 },
-    { name: "Tailwind CSS", level: 80 },
-    { name: "FastAPI", level: 55 },
-    { name: "MySQL", level: 60 },
-    { name: "Node.js", level: 45 },
-    { name: "Express.js", level: 40 },
-    { name: "Git", level: 60 },
-    { name: "GitHub", level: 65 },
-    { name: "Firebase", level: 30 },
-    { name: "HTML", level: 85 },
-    { name: "CSS", level: 70 },
-  ];
-  const educationData = [
-    {
-      degree: "B.Tech (Computer Science & Engineering)",
-      institution: "Shri Shankaracharya Institute of Professional Management & Technology, Raipur",
-      duration: "2022 - 2026",
-      description: [
-        "CGPA: 8.7",
-        "Key Learnings: Data Structures & Algorithms, Project Development, Team working",
-      ],
-    },
-    {
-      degree: "Higher Secondary (CBSE)",
-      institution: "Jawahar Navodaya Vidyalaya, Raipur",
-      duration: "2021 - 2022",
-      description: ["Percentage: 85.6 %", "Stream: PCM + CS"],
-    },
-    {
-      degree: "Senior Secondary (CBSE)",
-      institution: "Jawahar Navodaya Vidyalaya, Raipur",
-      duration: "2019 - 2020",
-      description: ["Percentage: 87.4 %"],
-    },
-  ];
-
-  const languages = [
-    { name: "C++", level: 80 },
-    { name: "Java", level: 40 },
-    { name: "Python", level: 30 }
-  ];
-  const cs = [
-    { name: "Object Oriented Programming" },
-    { name: "Data Structures & Algorithms" },
-    { name: "Database Management Systems" },
-    { name: "SDLC & Agile Methodologies" }
-  ]
-
-  const otherskills = [
-    { name: "Problem Solving" },
-    { name: "Debugging" },
-    { name: "Team Working" },
-    { name: "Content Writing" },
-  ];
-
-  // Scroll animation observer
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(({ isIntersecting, target }) => {
-          if (isIntersecting) {
-            setIsVisible((prev) => ({ ...prev, [target.id]: true }));
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    document.querySelectorAll('[data-animate]').forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-sky-900 min-h-screen overflow-x-hidden">
+    <div className="bg-gray-950 min-h-screen overflow-x-hidden" style={{ fontFamily: "'Inter', sans-serif" }}>
+
+      {/* ---- Global ambient background ---- */}
+      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        {/* Top-right glow */}
+        <div className="absolute -top-32 -right-32 w-[700px] h-[700px] bg-cyan-900/8 rounded-full blur-[160px]" />
+        {/* Bottom-left glow */}
+        <div className="absolute -bottom-32 -left-32 w-[600px] h-[600px] bg-sky-900/8 rounded-full blur-[160px]" />
+        {/* Center subtle glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-indigo-900/4 rounded-full blur-[120px]" />
+      </div>
+
+      {/* ---- Navbar ---- */}
       <motion.div
         initial={{ y: -60, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="relative z-50"
       >
         <Navbar />
       </motion.div>
 
-      <div className="container mx-auto px-4 py-16">
-        <div className="flex flex-col md:flex-row gap-8">
-          <aside className="md:w-1/4">
-            <Sidebar />
-          </aside>
+      {/* ---- Layout: Sidebar + Main ---- */}
+      <div className="relative z-10">
+        {/* Floating Sidebar (unchanged) */}
+        <Sidebar />
 
-          <main className="">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-10">
-              <motion.div
-                initial={{ opacity: 0, y: 60, scale: 0.9 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ duration: 1.2, ease: "easeOut" }}
-                viewport={{ once: true }}
-                className="bg-gradient-to-br from-gray-800/60 to-sky-900/40 shadow-xl rounded-2xl p-5 backdrop-blur-md hover:shadow-cyan-500/40 transition-shadow duration-500"
-              >
-                <Container />
-              </motion.div>
-
-              <div
-                className="relative group overflow-hidden rounded-2xl"
-                data-animate
-                id="video-container"
-              >
-                <video
-                  src="/hey.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-            </div>
-          </main>
-        </div>
+        {/* Main scroll content */}
+        <main>
+          <Hero />
+          <About />
+          <Experience />
+          <Services />
+          <Skills />
+          <ProjectsHighlight />
+          <Achievements />
+          <Education />
+          <Contact />
+          <Footer />
+        </main>
       </div>
-
-      {/* Experience Section */}
-      <Experience />
-      <Section title="Education">
-        <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
-          className="space-y-6 px-8"
-        >
-          {educationData.map((edu, idx) => (
-            <div
-              key={idx}
-              className="group relative overflow-hidden rounded-xl bg-gray-800/50 backdrop-blur-sm p-6 hover:bg-gray-800/70 transition-all duration-300"
-            >
-              <div className="relative z-10 text-white">
-                <h3 className="text-xl font-bold text-cyan-300">{edu.degree}</h3>
-                <p className="text-lg text-gray-300">{edu.institution}</p>
-                <p className="text-sm text-gray-400 mb-3">{edu.duration}</p>
-                <ul className="list-disc list-inside text-gray-300 text-sm space-y-1">
-                  {edu.description.map((item, i) => (
-                    <li key={i}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ))}
-        </motion.div>
-      </Section>
-
-      {/* Skills Section */}
-      <Section title="Technical Expertise">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <FloatingImage src={Giphy} />
-          <SkillGroup title="Programming Languages">{skillBars(languages)}</SkillGroup>
-          <SkillGroup title="Development Skills">{skillBars(skills)}</SkillGroup>
-          <SkillGroup title="CS Fundamentals">
-            {cs.map((skill, idx) => (
-              <div
-                key={idx}
-                className="group relative overflow-hidden rounded-xl bg-gray-800/50 backdrop-blur-sm p-5 hover:bg-gray-800/70 transition-all duration-300"
-              >
-                <div className="relative z-10">
-                  <h3 className="text-lg sm:text-md md:text-md font-bold text-white mb-2">{skill.name}</h3>
-                </div>
-              </div>
-            ))}
-          </SkillGroup>
-          <SkillGroup title="Other Skills">
-            {otherskills.map((skill, idx) => (
-              <div
-                key={idx}
-                className="group relative overflow-hidden rounded-xl bg-gray-800/50 backdrop-blur-sm p-5 hover:bg-gray-800/70 transition-all duration-300"
-              >
-                <div className="relative z-10">
-                  <h3 className="text-lg sm:text-md md:text-md font-bold text-white mb-2">{skill.name}</h3>
-                </div>
-              </div>
-            ))}
-          </SkillGroup>
-        </motion.div>
-      </Section>
-
-      {/* Awards Section */}
-      <Section title="Awards">
-        <motion.img
-          src={Awards}
-          alt="award"
-          initial={{
-            scale: 0.6,
-            rotate: -10,
-            opacity: 0,
-            filter: "blur(8px)",
-          }}
-          whileInView={{
-            scale: 1,
-            rotate: 0,
-            opacity: 1,
-            filter: "blur(0px)",
-          }}
-          transition={{
-            duration: 1.2,
-            ease: "easeInOut",
-            type: "spring",
-            stiffness: 60,
-          }}
-          className="md:h-40 lg:h-40 shadow-2xl mx-auto rounded-xl border-2 border-cyan-300 hover:scale-105 transition-transform duration-300 hover:shadow-cyan-400"
-        />
-      </Section>
-      <Footer />
-
-      {/* Custom Animation CSS */}
-      <style>{`
-        @keyframes float {
-          0% { transform: translateY(0px); }
-          50% { transform: translateY(-20px); }
-          100% { transform: translateY(0px); }
-        }
-        .animate-float { animation: float 6s ease-in-out infinite; }
-      `}</style>
     </div>
   );
 }
-
-// Reusable Components
-const Section = ({ title, children }) => (
-  <section className="py-20 bg-gradient-to-b from-gray-900 to-sky-900">
-    <div className="container mx-auto px-10">
-      <h2 className="text-4xl font-black text-center mb-12 bg-gradient-to-r from-sky-400 to-cyan-300 text-transparent bg-clip-text">
-        {title}
-      </h2>
-      {children}
-    </div>
-  </section>
-);
-
-const ExperienceItem = ({ company, role, duration, description }) => (
-  <div className="my-5 group relative overflow-hidden rounded-xl bg-gray-800/50 backdrop-blur-sm p-5 hover:bg-gray-800/70 transition-all duration-300">
-    <div className="relative z-10 text-white">
-      <h3 className="text-xl font-bold mb-1">{company}</h3>
-      <p className="text-md text-sky-300 mb-1">{role}</p>
-      <p className="text-md text-gray-400 mb-3">{duration}</p>
-      {description && (
-        <ul className="list-disc list-inside text-gray-300 text-sm space-y-1">
-          {description.map((item, index) => (
-            <li key={index}>{item}</li>
-          ))}
-        </ul>
-      )}
-    </div>
-  </div>
-);
-
-
-const SkillGroup = ({ title, children }) => (
-  <>
-    <h2 className="text-xl font-black m-5 bg-gradient-to-r from-sky-400 to-cyan-300 text-transparent bg-clip-text">
-      {title}
-    </h2>
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">{children}</div>
-  </>
-);
-
-const FloatingImage = ({ src }) => (
-  <div className="relative text-center mb-6">
-    <div className="inline-block animate-float">
-      <img src={src} alt="Floating Icon" className="h-16 w-16 mx-auto rounded-md" />
-    </div>
-  </div>
-);
 
 export default Home;
