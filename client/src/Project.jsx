@@ -12,8 +12,10 @@ import Zomato from '/Zomato.png';
 import ClubVista from '/ClubVista.png';
 import GreenBreeze from '/GreenBreeze.png';
 import Speeliable from '/Speeliable.png';
-import Ecoyukt from '/Speeliable.png'; // Mocking, fallback handled below
-import GetTestAI from '/Speeliable.png'; // Mocking, fallback handled below
+import Ecoyukt from '/Ecoyukt.png';
+import Clothing from '/Clothing.png';
+import Ghummu from '/Ghummu.png';
+import GetTestAI from '/GettestAI.png';
 
 function Project() {
     const [activeFilter, setActiveFilter] = useState('all');
@@ -21,6 +23,36 @@ function Project() {
     const projects = [
         {
             id: 0,
+            title: "EcoYukt",
+            description: "Sustainable collaborative platform that connects eco-friendly startups and products directly to customers. Features product listings and community building with sustainability-focused content.",
+            image: Ecoyukt,
+            category: "full-Stack",
+            githubLink: "#",
+            liveLink: "https://ecoyukt.vercel.app/",
+            techStack: ["React", "Node.js", "MongoDB", "Express.js", "Tailwind CSS"],
+        },
+        {
+            id: 1,
+            title: "Avayra Ethereal",
+            description: "A premium e-commerce platform for custom business clothing, designed to provide a seamless and sophisticated shopping experience for professionals.",
+            image: Clothing,
+            category: "full-Stack",
+            githubLink: "#",
+            liveLink: "https://avayra-ethereal.lovable.app/",
+            techStack: ["React", "Tailwind CSS"],
+        },
+        {
+            id: 2,
+            title: "Ghummu",
+            description: "Discovers hidden gems and suggests nearby places based on travel plans and budgets to create the perfect personalized travel itinerary.",
+            image: Ghummu,
+            category: "frontend",
+            githubLink: "#",
+            liveLink: "https://ghummu.lovable.app/",
+            techStack: ["React", "Tailwind CSS"],
+        },
+        {
+            id: 3,
             title: "Speeliable",
             description: "A workforce delivery management solution to track, assign, and optimize delivery operations. Includes QR-based package lookup and live location tracking.",
             image: Speeliable,
@@ -30,17 +62,7 @@ function Project() {
             techStack: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
         },
         {
-            id: 1,
-            title: "Ecoyukt",
-            description: "Community platform promoting sustainable practices and environmental awareness.",
-            image: Ecoyukt,
-            category: "full-Stack",
-            githubLink: "#",
-            liveLink: "#",
-            techStack: ["Next.js", "MongoDB", "Express.js", "Node.js", "Cloudinary", "Tailwind CSS"],
-        },
-        {
-            id: 2,
+            id: 4,
             title: "GetTestAI",
             description: "AI-powered platform generating sectional mock tests with authentication, dashboard, and result history using Mistral AI.",
             image: GetTestAI,
@@ -50,7 +72,7 @@ function Project() {
             techStack: ["React.js", "FastAPI", "MongoDB", "Tailwind CSS", "Mistral AI"],
         },
         {
-            id: 3,
+            id: 5,
             title: "ClubVista",
             description: "Manages club events efficiently. Creates, schedules, and manages events. Uploads and stores reports for future reference.",
             image: ClubVista,
@@ -60,7 +82,7 @@ function Project() {
             techStack: ["React.js", "Node.js", "Firebase", "FireStore", "Tailwind CSS"],
         },
         {
-            id: 4,
+            id: 6,
             title: "Task Manager",
             description: "A simple and efficient todo list app to manage daily tasks, with user friendly layout and design.",
             image: TaskManager,
@@ -70,7 +92,7 @@ function Project() {
             techStack: ["React.js", "Tailwind CSS", "FastAPI", "SQLite"],
         },
         {
-            id: 5,
+            id: 7,
             title: "GreenBreeze",
             description: "An innovative solution for urban air quality management through strategic plantation planning.",
             image: GreenBreeze,
@@ -80,7 +102,7 @@ function Project() {
             techStack: ["React.js", "Node.js", "Tailwind CSS"],
         },
         {
-            id: 6,
+            id: 8,
             title: "Printify Landing Page",
             description: "Recreates the UI of Printify.com, showcasing design and front-end development skills.",
             image: Printify,
@@ -90,7 +112,7 @@ function Project() {
             techStack: ["React.js", "Tailwind CSS"],
         },
         {
-            id: 7,
+            id: 9,
             title: "Zomato UI Page",
             description: "Replicates the basic UI of Zomato's landing page, demonstrating the ability to translate visual design into code.",
             image: Zomato,

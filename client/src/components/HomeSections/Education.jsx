@@ -22,7 +22,7 @@ const educationData = [
     tags: ["PCM", "Computer Science"]
   },
   {
-    emoji: "📚",
+    emoji: "🏫",
     degree: "Class 10 – CBSE",
     institution: "Jawahar Navodaya Vidyalaya",
     period: "2019 – 2020",

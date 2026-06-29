@@ -4,12 +4,10 @@ import { ArrowRight, Download, Mail, Code2, Trophy, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const badges = [
-  { icon: <Code2 className="w-3.5 h-3.5" />, text: "LeetCode 1478", color: "from-orange-500/20 to-orange-400/10 border-orange-500/30 text-orange-300" },
-  { icon: <Code2 className="w-3.5 h-3.5" />, text: "GFG 1594", color: "from-green-600/20 to-green-500/10 border-green-500/30 text-green-300" },
+  { icon: <Code2 className="w-3.5 h-3.5" />, text: "Competitive Coder", color: "from-orange-500/20 to-orange-400/10 border-orange-500/30 text-orange-300" },
   { icon: <Trophy className="w-3.5 h-3.5" />, text: "Top 50 – Vultr Hackathon", color: "from-yellow-500/20 to-yellow-400/10 border-yellow-500/30 text-yellow-300" },
   { icon: <Star className="w-3.5 h-3.5" />, text: "HackerRank 5★ C++", color: "from-emerald-500/20 to-emerald-400/10 border-emerald-500/30 text-emerald-300" },
   { icon: <Code2 className="w-3.5 h-3.5" />, text: "1000+ Problems Solved", color: "from-cyan-500/20 to-cyan-400/10 border-cyan-500/30 text-cyan-300" },
-  { icon: <Star className="w-3.5 h-3.5" />, text: "FSD Intern @Botivate", color: "from-sky-500/20 to-sky-400/10 border-sky-500/30 text-sky-300" },
 ];
 
 const roles = ["Full Stack Developer", "Software Engineer", "Problem Solver", "React Developer"];
@@ -50,17 +48,6 @@ const Hero = () => {
 
         {/* ---- Text Content ---- */}
         <div className="flex-1 text-center lg:text-left space-y-8 max-w-2xl mx-auto lg:mx-0">
-
-          {/* Greeting pill */}
-          <motion.div
-            initial={{ opacity: 0, y: -15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gray-800/70 border border-gray-700 text-gray-300 text-sm font-medium backdrop-blur-sm"
-          >
-            <span className="w-2 h-2 rounded-full bg-green-400 shadow-[0_0_8px_rgba(74,222,128,0.8)]"></span>
-            Available for opportunities
-          </motion.div>
 
           {/* Name + Role */}
           <motion.div
@@ -200,23 +187,6 @@ const Hero = () => {
         </motion.div>
 
       </div>
-
-      {/* ---- Scroll indicator ---- */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-      >
-        <p className="text-gray-600 text-xs tracking-widest uppercase font-mono">scroll</p>
-        <motion.div
-          animate={{ y: [0, 6, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-          className="w-5 h-8 rounded-full border-2 border-gray-700 flex items-start justify-center pt-1.5"
-        >
-          <div className="w-1 h-2 bg-cyan-500 rounded-full" />
-        </motion.div>
-      </motion.div>
 
     </section>
   );

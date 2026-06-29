@@ -7,8 +7,7 @@ const experiences = [
     title: "Full Stack Developer Intern",
     company: "Botivate Services LLP",
     location: "Raipur • Onsite",
-    period: "Jan 2026 – Present",
-    current: true,
+    period: "Jan 2026 – Apr 2026",
     points: [
       "Developed and maintained multiple client web applications.",
       "Built features using React.js, Node.js, and Supabase.",
